@@ -78,7 +78,7 @@ async function handleregistration(event) {
             formData.append('x', x);
             formData.append('dp', dp); 
 
-            fetch("http://127.0.0.1:8000/customer/register/", {
+            fetch("https://homeper.onrender.com/customer/register/", {
                 method: "POST",
                 body: formData,
             })
@@ -115,7 +115,7 @@ const handlelogin=(event)=>{
     console.log(username,password)
 
 
-    fetch("http://127.0.0.1:8000/customer/login/",{
+    fetch("https://homeper.onrender.com/customer/login/",{
 
         method: "POST",
         headers: {"content-type": "application/json"},

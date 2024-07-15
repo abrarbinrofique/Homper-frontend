@@ -4,7 +4,7 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
     const reviewText = document.getElementById('reviewText').value;
     const rating = document.getElementById('rating').value;
 
-    fetch('http://127.0.0.1:8000/service/review/', {
+    fetch('https://homeper.onrender.com/service/review/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

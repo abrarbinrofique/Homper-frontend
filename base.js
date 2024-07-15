@@ -1,11 +1,11 @@
 async function getservice() {
-    let x = await fetch('http://127.0.0.1:8000/service/list/')
+    let x = await fetch('https://homeper.onrender.com/service/list/')
     let data = await x.json()
     return data
 }
 
 async function getre(){
-    let x= await fetch('http://127.0.0.1:8000/service/review/')
+    let x= await fetch('https://homeper.onrender.com/service/review/')
     let data=await x.json()
     return data
 }
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("user", userId);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/customer/", {
+      const response = await fetch("https://homeper.onrender.com/customer/", {
         method: "POST",
         headers: {
           "Authorization": `Token ${token}`

@@ -4,7 +4,7 @@ async function servicetails()
 
     console.log(param)
 
-    let x=await fetch(`http://127.0.0.1:8000/service/list/${param}/`)
+    let x=await fetch(`https://homeper.onrender.com/service/list/${param}/`)
 
    
 
@@ -76,7 +76,7 @@ async  function handleReviewSubmit(event) {
             customer: customerId
         };
 
-        fetch('http://127.0.0.1:8000/service/review/', {
+        fetch('https://homeper.onrender.com/service/review/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
