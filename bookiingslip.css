@@ -3,14 +3,16 @@
     margin-right: 10%;
     margin-top: 5%;
 }
+body{
+    height: 100vw;
+    
+}
 
 .footers{
+   
     background-color: #18151f;
-    margin-bottom: 0px;
+    margin-top: 40vw;
 }
 
 
-body{
-    height: 100%;
-    margin-bottom:0;
-}
+
