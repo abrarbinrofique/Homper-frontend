@@ -49,11 +49,11 @@ async function handleregistration(event) {
         email,
         password,
         confirm_password,
-        bio,  // Include bio in the info object
-        phone,  // Include phone in the info object
-        fb,  // Include fb in the info object
-        ln,  // Include ln in the info object
-        x  // Include x in the info object
+        bio,  
+        phone,  
+        fb,  
+        ln,  
+        x 
     };
 
     if (password === confirm_password) {
@@ -128,7 +128,7 @@ const handlelogin=(event)=>{
         localStorage.setItem("token",data.token);
         localStorage.setItem("user_id",data.user_id);
         localStorage.setItem("customer", JSON.stringify(data.customer))
-        window.location.href="Base.html"
+        window.location.href="index.html"
 
         }
     });

@@ -4,6 +4,8 @@
     background-size: cover; /* Ensures the background image covers the entire viewport */
     background-position: center; /* Centers the background image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
+    border-radius: 50px;
+    margin:20px
     /* Optionally, you can add more styles to customize */
 }
 .left-banner{
@@ -25,8 +27,32 @@
     height: 100vh; 
 }
 
+.servicesclass{
+  background: rgb(8,185,174);
+background: linear-gradient(90deg, rgba(8,185,174,1) 0%, rgba(41,8,112,1) 50%, rgba(211,76,244,1) 100%);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+
+  border-radius: 30px;
+
+}
+.serviess{
+  /* margin-left:3vw; */
+ 
+  justify-content: center;
+  align-items: center;
+  flex-direction: wrap;
+ 
+
+}
 .carder{
-    width:80%
+    width:40%;
+
+
+    margin-left:4vw;
 }
 
 .bntxtr {
@@ -37,6 +63,26 @@
     font-weight: bold;
 }
 
+.bntr {
+   
+  color: #faf9f9; /* Optional: set the text color */
+  padding: 2px 4px; /* Optional: add some padding */
+  border-radius: 3px;
+  font-weight: bold;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 10%;
+  margin-left:42vw;
+  scrollbar-highlight-color: aqua;
+  margin-top: -132px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+mark{
+  background-color: rgb(101, 178, 229);
+
+}
 
 .footers{
     background-color: #18151f;
@@ -270,3 +316,56 @@ a, a:hover {
   }
 }
 
+.logingsite{
+  background-color: #FFFFFF;
+  margin: 35px;
+ 
+}
+
+.logingsiteimage{
+  margin: 20px;
+  
+}
+
+.logings{
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(140, 3, 103);
+  border-radius: 5px;
+  width:50%;
+  /* height: 55%; */
+  text-decoration: none;
+  padding:5px;
+  margin: 5px;
+  
+}
+
+.logingl{
+ 
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(25, 191, 241);
+  border-radius: 5px;
+  width:50%;
+  /* height: 55%; */
+  text-decoration: none;
+  padding:5px;
+  margin: 5px;
+  
+  
+
+}
+
+.logings:hover{
+  background-color: rgb(14, 13, 14);
+  color: white;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.logingl:hover{
+  background-color: rgb(14, 13, 14);
+  color: white;
+  border-radius: 6px;
+  padding: 3px;
+}

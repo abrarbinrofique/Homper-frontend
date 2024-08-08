@@ -1,104 +1,262 @@
-async function servicetails()
-{
-    const param=new URLSearchParams(window.location.search).get("dataid")
+const cus=localStorage.getItem('customer')
+const userication=localStorage.getItem('user_id')
+const token=localStorage.getItem('token')
+if (cus && userication && token)
+    {
 
-    console.log(param)
 
-    let x=await fetch(`https://homeper.onrender.com/service/list/${param}/`)
+
+        function logoutuser() {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user_id');
+            localStorage.removeItem('customer');
+            
+            
+            window.location.href = 'login.html';  
+          }
+
+let serviceId; 
+async function servicetails() {
+    const param = new URLSearchParams(window.location.search).get("dataid");
+    console.log(param);
+
+    let response = await fetch(`https://homeper.onrender.com/service/list/${param}/`);
+    let data = await response.json();
+    console.log(data);
+
+    serviceId = data.Name; // Store the service ID
+    const rvtxt=document.getElementById('rvtxt')
+const h1=document.createElement('h1')
+
+console.log(serviceId)
+h1.innerHTML=
+`
+<h2>Our customer reviews about ${serviceId} </h2>
+`
+rvtxt.append(h1)
+
+    const parent = document.getElementById("detailid");
+    const div = document.createElement('div');
+    div.classList.add('cardcenter')
+
+    div.innerHTML = `
+        <div class="postcard dark blue py-5 my-5  carder  col-lg-5">
+        <a class="postcard__img_link" href="#">
+          <img class="postcard__img" src=${data.image} alt="Image Title" />
+        </a>
+        <div class="postcard__text">
+          <h1 class="postcard__title blue"><a href="#">${data.Name}</a></h1>
+          <div class="postcard__subtitle small">
+            <time datetime="2020-05-25 12:00:00">
+              <h5 class="mr-2">${data.average_rating}⭐</h5>
+            </time>
+          </div>
+          <div class="postcard__bar"></div>
+          <div class="postcard__preview-txt">${data.description}</div>
+          <ul class="postcard__tagbox">
+          
+             <h6 class="bg-success m-2 p-2 "><i class="fas fa-tag mr-2"></i>${data.price}$</h6>
+           
+           
+                 <button type="button" class="btn btn-warning m-2" data-bs-toggle="modal" data-bs-target="#example">
+                    Take service
+                </button>
+                <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Give Review
+                </button>
+          </ul>
+        </div>
+      </div>
+
+    `;
+
+    parent.appendChild(div);
 
    
+    document.getElementById('reviewForm').addEventListener('submit', submitReview);
+    document.getElementById('BookForm').addEventListener('submit', bookservice);
+}
 
-    let data=await x.json()
-    console.log(data)
-    const parent=document.getElementById("detailid")
-    const div=document.createElement('div')
- 
-        div.innerHTML=`
-        <div class="d-flex justify-content-center">
-        <div class="col-lg-4 justify-content-center align-items-center mt--5 ">
+servicetails(); 
 
-        <image class="imager" src=${data.image}></image>
-     
-          </div>
-     
-          <div class="col-lg-4  align-items-center justify-content-center  bgdesc p-5 ">
-     
-           <h1 class="text-white text-center">${data.Name}</h1>
-           <h5 class="text-white">${data.description}</h5>
-           <button class="bg-success m-2 p-2 "><i class="fas fa-tag mr-2 "></i>${data.price}$</button>
-           <button class="bg-success m-2 p-2 "><i class="fas fa-star mr-2 "></i>${data.average_rating}</button> 
-            <button class="bg-waring m-2 p-2 "><i class="fas fa-bag mr-2 "></i>Take service</button>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Give Review
-</button>
-         </div>`
-     
-     
-     
+async function submitReview(event) {
+    event.preventDefault();
     
+  
+
+
+    const ratingElement = document.getElementById('ratting');
+    const reviewTextElement = document.getElementById('textreview');
+    const customer =  localStorage.getItem("customer");
+    const customerid=JSON.parse(customer).id
+
+    console.log(customerid,ratingElement, reviewTextElement )
+    if (!ratingElement || !reviewTextElement || !customerid) {
+        alert('Missing required fields or customer not logged in.');
+        return;
+    }
+
+    const ratting = parseInt(ratingElement.value); 
+    const reviewText = reviewTextElement.value;
+    console.log(ratting,reviewText,serviceId)
+
+    const formData = {
+        customer: customerid,
+        service: serviceId, 
+        ratting: ratting,
+        textreview: reviewText,
         
+    };
+    console.log(JSON.stringify(formData))
+    try {
+        const response = await fetch('https://homeper.onrender.com/service/review/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
 
-    parent.appendChild(div)
+           
+        });
+        console.log(response)
 
-    return data
+        let data = await response.json();
+        console.log('Review posted successfully:', data);
+        alert('Review posted successfully!');
+        document.getElementById('reviewForm').reset();
+    } catch (error) {
+        console.error('Error posting review:', error);
+        alert('Error posting review. Please try again.');
+    }
+}
 
+
+
+
+async function bookservice(event) {
+    event.preventDefault();
+    
+  
+
+
+    const timeElement = document.getElementById('time');
+    const customer =  localStorage.getItem("customer");
+    const customerid=JSON.parse(customer).id
+
+    console.log(customerid,timeElement)
+    if (!timeElement || !customerid) {
+        alert('Missing required fields or customer not logged in.');
+        return;
+    }
+
+    const time =timeElement.value;
+    console.log(time,serviceId)
+
+    const formData = {
+      
+    service: serviceId,
+    chooce: time,
+    customer: customerid
+        
+    };
+    console.log(JSON.stringify(formData))
+    try {
+        const response = await fetch('https://homeper.onrender.com/serviceslot/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+
+           
+        });
+        console.log(response)
+
+        let data = await response.json();
+        console.log('Service Booked successfully:', data);
+        alert('Service Booked successfully!');
+        document.getElementById('BookForm').reset();
+    } catch (error) {
+        console.error('Error posting review:', error);
+        alert('Error posting review. Please try again.');
+    }
+}
+
+
+async function productreview()
+{
+    const param = new URLSearchParams(window.location.search).get("dataid");
+    console.log(param);
+
+    let response = await fetch(`https://homeper.onrender.com/service/review/?service_id=${param}`);
+    let data = await response.json();
+    console.log(data);
+
+   
+}
+
+
+async function getre(){
+
+    const param = new URLSearchParams(window.location.search).get("dataid");
+    console.log(param);
+    let response = await fetch(`https://homeper.onrender.com/service/review/?service_id=${param}`);
+    let data = await response.json();
+    console.log(data);
     
 
+ const paren = document.getElementById('slider2')
+
+ data.forEach((rv) => {
+
+     
+     const li = document.createElement('li')
+
+     console.log(rv)
+     
+     li.innerHTML = `
+          <li>
+              <div class="card shadow h-100">
+                  <div class="ratio ratio-1x1">
+                     <img src="/image/rr.jpg" class="card-img-top" loading="lazy" alt="...">
+                  </div>
+                  <div class="card-body d-flex flex-column flex-md-row">
+                      <div class="flex-grow-1">
+                          <strong>${rv.textreview}</strong>
+                          <p class="card-text">${rv.customer}</p>
+                      </div>
+                      <div class="px-md-2">personal ratting:${rv.ratting}⭐</div>
+                  </div>
+              </div>
+          </li>
+
+ 
+                 `
+     paren.appendChild(li)
 
 
 
+ })
 
-
-
-
-
-
-
+ 
 
 
 }
 
+getre()
+function logoutuser() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user_id');
+    localStorage.removeItem('customer');
+    
+    
+    window.location.href = 'login.html';  
+  }
+  
+ }
 
-async  function handleReviewSubmit(event) {
-    const  x= await servicetails()
+else
+{
+    window.location.href = 'login.html'
 
-        event.preventDefault();
-        const service =x.id
-        console.log(x.id)
-        const rating = document.getElementById('ratting').value;
-        const reviewText = document.getElementById('textreview').value;
-        const customerId = localStorage.getItem('customer_id');
-
-        const formData = {
-            service: service,
-            rating: rating,
-            textreview: reviewText,
-            customer: customerId
-        };
-
-        fetch('https://homeper.onrender.com/service/review/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                
-            },
-            body: JSON.stringify(formData),
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Review posted successfully:', data);
-            
-            alert('Review posted successfully!');
-          
-            reviewForm.reset();
-        })
-        .catch(error => {
-            console.error('Error posting review:', error);
-           
-            alert('Error posting review. Please try again.');
-        });
-    };
-
-
-
-servicetails()
+}

@@ -10,73 +10,60 @@
     <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ti-icons@0.1.2/css/themify-icons.css">
-        
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="servicedetail.css" />
 </head>
-
-<body>
-  <body id="docbody" class="docbody">
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid bg-dark p-3">
-          <a class="navbar-brand text-white" href="#"><i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i> Homeper</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#">Services</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-secondary text-white" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <div class="row justify-content-center">
-        <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
-            <div class="card border-0 shadow">
-                <img id="customer-dp" alt="Profile Picture">
-                <div class="card-body p-1-9 p-xl-5">
-                    <div class="mb-4">
-                        <h3 id="customer-name" class="h4 mb-0"></h3>
-                        <span id="customer-designation" class="text-primary"></span>
-                    </div>
-                    <div id="customer-specialization"></div>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-3"><h4>Fee: <span id="customer-fee"></span></h4></li>
-                        <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">Appointment</button>
-                    </ul>
-                    <ul class="social-icon-style2 ps-0">
-                        <li><a id="customer-fb" href="#" class="rounded-3"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a id="customer-twitter" href="#" class="rounded-3"><i class="fab fa-twitter"></i></a></li>
-                        <li><a id="customer-ln" href="#" class="rounded-3"><i class="fab fa-linkedin-in"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-8">
-            <div class="ps-lg-1-6 ps-xl-5">
-                <div><h3 class="mb-0 text-primary">Visiting Time</h3><b id="customer-available-time"></b></div>
-                <div class="text-start mb-1-6 wow fadeIn">
-                    <h2 id="customer-bio" class="mb-0 text-primary">#Education</h2>
-                </div>
-                <div class="row mt-n4">
-                    
-                    
-                    <div class="col-sm-6 col-xl-4 mt-4">
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid bg-dark p-3">
+    <a class="navbar-brand text-white " href="index.html"> <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i> Homeper</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white " href="index.html">Services</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user-circle"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item " href="profile.html">Profile</a></li>
+            <li><a class="dropdown-item " href="bookiingslip.html">cart List</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" onclick="logoutuser()">Logout</a></li>
+          </ul>
+        </li>
+      
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary text-white " type="submit">Search</button>
+      </form>
     </div>
+  </div>
+</nav>
+<body>
+  
+  <div id="profilebox" class="justify-content-center box">
+
+   
+  </div>
+
+
+  <div class="tabler">
+    <table class="table" id="tableslip">
+    <thead>
+    </thead>
+
+
+  </tbody>
+</table>
+</div>
+
+ 
 <footer class="footers  d-flex">
 
     <div class="col-md-6 ft align-items-center text-white mt-5">
