@@ -357,15 +357,18 @@ a, a:hover {
 }
 
 .logings:hover{
-  background-color: rgb(14, 13, 14);
+  background-color: rgb(197, 19, 197);
   color: white;
   border-radius: 6px;
   padding: 3px;
 }
 
 .logingl:hover{
-  background-color: rgb(14, 13, 14);
+  background-color: rgb(169, 10, 169);
   color: white;
   border-radius: 6px;
   padding: 3px;
 }
+
+
+    

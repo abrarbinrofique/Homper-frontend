@@ -26,6 +26,16 @@ if (!cus || !userication || !token)
    `
 
 
+   const formid=document.getElementById('formid')
+
+   formid.innerHTML=`
+     <a href="sign.html" class="logings text-white p-2"> signup</a>
+    <a href="login.html" class="logingl text-dark p-2">Login</a>
+   
+   
+   `
+
+
 }
 
 
