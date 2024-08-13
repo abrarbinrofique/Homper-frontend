@@ -90,6 +90,8 @@ async function submitReview(event) {
     const customer =  localStorage.getItem("customer");
     const customerid=JSON.parse(customer).id
 
+    console.log(customerid)
+
     console.log(customerid,ratingElement, reviewTextElement )
     if (!ratingElement || !reviewTextElement || !customerid) {
         alert('Missing required fields or customer not logged in.');
@@ -218,7 +220,7 @@ async function getre(){
           <li>
               <div class="card shadow h-100">
                   <div class="ratio ratio-1x1">
-                     <img src="https://i.ibb.co/VCbbq2d/rr.jpg" class="card-img-top" loading="lazy" alt="...">
+                     <img src="https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723575835/jo4v5d6z6fifogomogao.jpg" class="card-img-top" loading="lazy" alt="...">
                   </div>
                   <div class="card-body d-flex flex-column flex-md-row">
                       <div class="flex-grow-1">

@@ -10,7 +10,7 @@ if (!cus || !userication || !token)
 
    landing.innerHTML=
    `
-     <img class="logingsiteimage" src="https://i.ibb.co/tY87mnn/homser.jpg" alt="">
+     <img class="logingsiteimage" src="https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723571231/sl9lyh9xlzrexguhcvcm.jpg" alt="">
       <div class="color-secondary justify-content-center align-items-center m-5">
       <h1 class="">Busy in your daily life?</h1>
          <h3>Homper is here for making your life easy.Lets start the journey with us</h3>
@@ -176,20 +176,26 @@ async function loadservice() {
        console.log(rv)
        
        li.innerHTML = `
-            <li>
-                <div class="card shadow h-100">
-                    <div class="ratio ratio-1x1">
-                       <img src="https://i.ibb.co/VCbbq2d/rr.jpg" class="card-img-top" loading="lazy" alt="...">
-                    </div>
+           
+                <div class="card shadow reviewcards">
+                  
+                       <img src="https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723575835/jo4v5d6z6fifogomogao.jpg" class="card-img-top" loading="lazy" alt="...">
+                     
                     <div class="card-body d-flex flex-column flex-md-row">
                         <div class="flex-grow-1">
                             <strong>${rv.textreview}</strong>
-                            <p class="card-text">${rv.customer}</p>
+                            <p>personal ratting:${rv.ratting}⭐</p>
+                             <p class="card-text">${rv.customer}</p>
                         </div>
-                        <div class="px-md-2">personal ratting:${rv.ratting}⭐</div>
+                         
+                       
+                     
                     </div>
+                    
+                    
+                    
                 </div>
-            </li>
+           
 
    
                    `

@@ -1,6 +1,6 @@
 .banner {
     height: 100vh;
-    background-image: url('https://i.ibb.co/hXgyQV6/hb.jpg');
+    background-image: url('https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723575771/ou58ze7fh9j9ptr2gywc.jpg');
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
@@ -371,4 +371,7 @@ a, a:hover {
 }
 
 
-    
+.reviewcards{
+  width:18vw;
+  height: 20vw;
+}
