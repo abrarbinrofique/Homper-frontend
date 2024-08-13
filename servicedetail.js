@@ -218,7 +218,7 @@ async function getre(){
           <li>
               <div class="card shadow h-100">
                   <div class="ratio ratio-1x1">
-                     <img src="https://ibb.co/HPRRHn0" class="card-img-top" loading="lazy" alt="...">
+                     <img src="https://i.ibb.co/VCbbq2d/rr.jpg" class="card-img-top" loading="lazy" alt="...">
                   </div>
                   <div class="card-body d-flex flex-column flex-md-row">
                       <div class="flex-grow-1">

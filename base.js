@@ -10,7 +10,7 @@ if (!cus || !userication || !token)
 
    landing.innerHTML=
    `
-     <img class="logingsiteimage" src="https://ibb.co/KVFM0BB" alt="">
+     <img class="logingsiteimage" src="https://i.ibb.co/tY87mnn/homser.jpg" alt="">
       <div class="color-secondary justify-content-center align-items-center m-5">
       <h1 class="">Busy in your daily life?</h1>
          <h3>Homper is here for making your life easy.Lets start the journey with us</h3>
