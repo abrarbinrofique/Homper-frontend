@@ -45,10 +45,10 @@ rvtxt.append(h1)
           <img class="postcard__img" src=${data.image} alt="Image Title" />
         </a>
         <div class="postcard__text">
-          <h1 class="postcard__title blue"><a href="#">${data.Name}</a></h1>
+          <h1 class="postcard__title blue m-3"><a href="#">${data.Name}</a></h1>
           <div class="postcard__subtitle small">
             <time datetime="2020-05-25 12:00:00">
-              <h5 class="mr-2">${data.average_rating}⭐</h5>
+              <h5 class="m-5">${data.average_rating}⭐</h5>
             </time>
           </div>
           <div class="postcard__bar"></div>
@@ -218,7 +218,7 @@ async function getre(){
           <li>
               <div class="card shadow h-100">
                   <div class="ratio ratio-1x1">
-                     <img src="/image/rr.jpg" class="card-img-top" loading="lazy" alt="...">
+                     <img src="https://ibb.co/HPRRHn0" class="card-img-top" loading="lazy" alt="...">
                   </div>
                   <div class="card-body d-flex flex-column flex-md-row">
                       <div class="flex-grow-1">

@@ -1,12 +1,12 @@
 .banner {
     height: 100vh;
-    background-image: url('/image/hb.jpg'); /* Replace with your image src */
-    background-size: cover; /* Ensures the background image covers the entire viewport */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('https://ibb.co/8zm0v9C');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 50px;
     margin:20px
-    /* Optionally, you can add more styles to customize */
+    
 }
 .left-banner{
     align-items: center;
