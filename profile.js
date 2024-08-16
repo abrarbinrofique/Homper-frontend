@@ -19,7 +19,51 @@ async function profile()
         {
 
 
+const div=document.getElementById('serviceid')
 
+div.innerHTML=
+`
+<div class="p-3 bg-success m-5"> <h3 class="text-white">Add a new Service...</h3></div>
+<form class="serviceaddformer" id="registrationForm">
+  <p id="error" class="error bg-danger text-white text-center"></p>
+  <p id="success" class='bg-success text-white text-center'></p>
+
+  
+
+
+  
+  <div class="serviceaddform form-outline mb-4">
+      <input id="name" type="text" class="form-control" required placeholder="Service Name">
+    
+  </div>
+
+  <!-- Confirm Password input -->
+  <div class=" serviceaddform form-outline mb-4">
+      <input id="price" type="number" class="form-control" required placeholder="price">
+     
+  </div>
+
+  <!-- Additional fields -->
+  <div class="serviceaddform form-outline mb-4">
+      <input id="bio" type="text" class="form-control" placeholder="Description">
+     
+      
+  </div>
+
+  <div class=" serviceaddform form-outline mb-4">
+      <input id="dp" type="file" class="form-control">
+      
+  </div>
+
+
+
+  <!-- Submit button -->
+  <button class=" serviceaddform btn btn-info" onclick="addservicebutton(event)"> <h5 class="text-white">Add Service</h5></button>
+
+  <!-- Social login buttons -->
+</form>
+
+`
 
 
         
