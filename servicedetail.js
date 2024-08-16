@@ -31,7 +31,7 @@ const h1=document.createElement('h1')
 console.log(serviceId)
 h1.innerHTML=
 `
-<h3 class="rvtxtds">Our customer reviews about ${serviceId} </h3>
+<h3 class="mx-5 p-3  rvtxtds">Our customer reviews about ${serviceId} </h3>
 `
 rvtxt.append(h1)
 
@@ -42,7 +42,7 @@ rvtxt.append(h1)
     div.innerHTML = `
         <div class="postcard dark blue py-5 my-5  carder  col-lg-5">
         <a class="postcard__img_link" href="#">
-          <img class="postcard__img" src=${data.image} alt="Image Title" />
+          <img class="postcard__img" src="https://res.cloudinary.com/dk2vgd0dv/${data.image}" alt="Image Title" />
         </a>
         <div class="postcard__text">
           <h1 class="postcard__title blue m-3"><a href="#">${data.Name}</a></h1>
@@ -217,20 +217,26 @@ async function getre(){
      console.log(rv)
      
      li.innerHTML = `
-          <li>
-              <div class="card shadow h-100">
-                  <div class="ratio ratio-1x1">
-                     <img src="https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723575835/jo4v5d6z6fifogomogao.jpg" class="card-img-top" loading="lazy" alt="...">
-                  </div>
-                  <div class="card-body d-flex flex-column flex-md-row">
-                      <div class="flex-grow-1">
-                          <strong>${rv.textreview}</strong>
-                          <p class="card-text">${rv.customer}</p>
-                      </div>
-                      <div class="px-md-2">personal ratting:${rv.ratting}⭐</div>
-                  </div>
-              </div>
-          </li>
+          
+              <div class="card shadow reviewcards mx-5">
+                  
+                       <img src="https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723575835/jo4v5d6z6fifogomogao.jpg" class="card-img-top" loading="lazy" alt="...">
+                     
+                    <div class="card-body d-flex flex-column flex-md-row">
+                        <div class="flex-grow-1">
+                            <strong>${rv.textreview}</strong>
+                            <p>personal ratting:${rv.ratting}⭐</p>
+                             <p class="card-text">${rv.customer}</p>
+                        </div>
+                         
+                       
+                     
+                    </div>
+                    
+                    
+                    
+                </div>
+          
 
  
                  `

@@ -122,7 +122,7 @@ async function loadservice() {
         div.innerHTML = `
      <div class="postcard dark blue py-5 mr-5">
         <a class="postcard__img_link" href="servicedetail.html?dataid=${data.id}">
-          <img class="postcard__img" src=${data.image} alt="Image Title" />
+          <img class="postcard__img" src="https://res.cloudinary.com/dk2vgd0dv/${data.image}" alt="Image Title" />
         </a>
         <div class="postcard__text">
           <h1 class="postcard__title blue"><a href="#">${data.Name}</a></h1>

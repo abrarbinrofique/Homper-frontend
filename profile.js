@@ -17,21 +17,43 @@ async function profile()
 
     if (data.user==='admin')
         {
+
+
+
+
+
+        
+         
+
+
+
+
+
+
+
             const response = await fetch(`https://homeper.onrender.com/customer/userlist/`);
             const data = await response.json();
             console.log(data);
     const tr=document.createElement('tr')
     const parent=document.getElementById('tableslip')
+    const parent2=document.getElementById('adminadd')
+    const h3=document.createElement('h3')
 
+    parent2.innerHTML=
+    `
+   <h2 class="justify-content-center bg-danger m-5 p-4"> Add a User as an Admin...</h2>
+
+    `
+   parent.append(h3)
     tr.innerHTML=
 
-    `<tr>
+    `
 
-        <td class="table-secondary  text-center">customer id</td>
-        <td class="table-success text-center">Customer username</td>
-        <td class="table-danger text-center">Add an Admin</td>
+        <td class="bg-primary text-center border border-2 text-dark p-3"><h3 class="bg-primary">customer id</h3></td>
+        <td class="bg-info text-center border border-2 text-dark p-3"><h5 class="bg-info">Customer username</h5></td>
+        <td class="bg-warning text-center border border-2 p-3"><h5 class="bg-warning">Add an Admin</h5></td>
        
-    </tr>
+    
    `
    parent.append(tr)
    
@@ -54,14 +76,29 @@ async function profile()
    
 
     tr.innerHTML=`
-    <td class="bg-primary text-center border border-2 text-dark">${element.id}</td>
-    <td class="bg-info text-center border border-2 text-dark">${element.first_name} ${element.last_name} </td>
-    <td class="bg-warning text-center border border-2 "><button class="adminbutton ${buttoncolor}  text-dark m-4" onclick="makeUserAdmin(${element.id})">${ad}</button></td>
+    <td class="bg-primary text-center border border-2 text-dark"><h3 class="bg-primary">${element.id}</h3></td>
+    <td class="bg-info text-center border border-2 text-dark"><h5 class="bg-info">${element.first_name} ${element.last_name}</h5> </td>
+    <td class="bg-warning text-center border border-2 "><button class="adminbutton ${buttoncolor}  text-white m-4" onclick="makeUserAdmin(${element.id})">${ad}</button></td>
     `
     parent.append(tr)
     
 
    }});
+ 
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
           
         }
@@ -97,7 +134,7 @@ async function profile()
         
       
         <div class="trick ">
-         <img class="dpimg" src="${data.dp}" alt="">
+         <img class="dpimg" src="https://res.cloudinary.com/dk2vgd0dv/${data.dp}" alt="">
         
         </div>
       </div>
@@ -188,3 +225,37 @@ function logoutuser() {
   window.location.href = 'login.html';  
 }
 
+
+async function addservicebutton(event){
+  event.preventDefault(); 
+  alert('Button clicked!');
+  
+  const Name = document.getElementById('name').value;
+  const Price = document.getElementById('price').value;
+  const Description = document.getElementById('bio').value;
+  const Image = document.getElementById('dp').files[0];
+  const Token = localStorage.getItem('token');
+
+  console.log(Name, Price, Description, Image);
+
+  const formData = new FormData();
+  formData.append('Name', Name);
+  formData.append('price', Price);
+  formData.append('description', Description);
+  formData.append('image', Image);
+
+  fetch("https://homeper.onrender.com/service/list/", {
+      method: "POST",
+      headers: {
+          "Authorization": `Bearer ${Token}`
+      },
+      body: formData
+  })
+  .then((res) => res.json())
+  .then((data) => {
+      console.log(data);
+  })
+  .catch((error) => {
+      console.error("Error:", error);
+  });
+}

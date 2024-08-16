@@ -599,3 +599,35 @@ a, a:hover {
 .footer{
   margin-top:80vw
 }
+
+
+.serviceaddform{
+
+  background: radial-gradient(circle, rgb(103, 174, 225) 0%, rgb(3, 63, 136) 100%);
+   margin:15vw;
+  padding:20px;
+  margin-top:15px;
+  border-radius: 20px;
+
+}
+
+
+.serviceaddformer{
+
+/* background: radial-gradient(circle, rgb(59, 161, 234) 0%, rgb(92, 0, 250) 100%); */
+margin:15vw;
+padding:20px;
+margin-top:15px;
+border-radius: 20px;
+
+
+}
+
+
+
+.reviewcards{
+  width:18vw;
+  height: 20vw;
+  margin-left: 10px;
+  padding:20px
+}
