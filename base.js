@@ -3,6 +3,7 @@ const userication=localStorage.getItem('user_id')
 const token=localStorage.getItem('token')
 
 
+
 if (!cus || !userication || !token)
 {
 
@@ -152,29 +153,42 @@ async function loadservice() {
 
 
     })
-
-
-    async function getre(){
-      let x= await fetch('https://homeper.onrender.com/service/review/')
-      let data=await x.json()
-      return data
   }
   
-  
 
 
 
-   let review=await getre()
+async function getre(){
+      
+      let x= await fetch('https://homeper.onrender.com/service/review/')
+      let data=await x.json()
 
-   const paren = document.getElementById('slider2')
+      const paren = document.getElementById('slider2')
+   
 
-   review.forEach((rv) => {
+   data.forEach((rv) => {
+    const li=document.createElement('li')
+   
+   
+    let customerid=rv.customer
+    console.log(customerid)
+    rvname(customerid)
+   
 
+
+
+
+
+
+    async function rvname(customerid){
+      const res =await  fetch(`https://homeper.onrender.com/customer/${customerid}`);
+        const data =await  res.json();
+    
        
-       const li = document.createElement('li')
-
-       console.log(rv)
+      let  name= data.user
        
+    
+    
        li.innerHTML = `
            
                 <div class="card shadow reviewcards">
@@ -184,8 +198,9 @@ async function loadservice() {
                     <div class="card-body d-flex flex-column flex-md-row">
                         <div class="flex-grow-1">
                             <strong>${rv.textreview}</strong>
-                            <p>personal ratting:${rv.ratting}⭐</p>
-                             <p class="card-text">${rv.customer}</p>
+                            <p>personal ratting:  ${rv.ratting}⭐</p>
+ 
+                            <p class="card-text">${name}</p>
                         </div>
                          
                        
@@ -201,14 +216,20 @@ async function loadservice() {
                    `
        paren.appendChild(li)
 
-
+    }
+    
 
    })
 
    
 
 
-}
+
+      
+        }
+  
+      
+getre()
 
 loadservice()
 

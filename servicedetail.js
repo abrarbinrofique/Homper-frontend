@@ -215,6 +215,23 @@ async function getre(){
      const li = document.createElement('li')
 
      console.log(rv)
+
+     let customerid=rv.customer
+     console.log(customerid)
+     rvname(customerid)
+    
+ 
+ 
+ 
+ 
+ 
+ 
+     async function rvname(customerid){
+       const res =await  fetch(`https://homeper.onrender.com/customer/${customerid}`);
+         const data =await  res.json();
+     
+        
+       let  name= data.user
      
      li.innerHTML = `
           
@@ -226,7 +243,7 @@ async function getre(){
                         <div class="flex-grow-1">
                             <strong>${rv.textreview}</strong>
                             <p>personal ratting:${rv.ratting}⭐</p>
-                             <p class="card-text">${rv.customer}</p>
+                             <p class="card-text">${name}</p>
                         </div>
                          
                        
@@ -242,7 +259,7 @@ async function getre(){
                  `
      paren.appendChild(li)
 
-
+     }
 
  })
 
