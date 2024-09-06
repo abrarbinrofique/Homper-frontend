@@ -80,3 +80,19 @@ body {
     .logoback{
         background-color: rgba(255, 255, 255, 0.5);
     } */
+
+
+    .custom-input {
+      border: 2px solid #ccc;       
+      border-radius: 10px;            
+      padding: 10px;                  
+      width: 100%;                  
+      box-sizing: border-box;        
+      font-size: 16px;                
+  }
+  
+  .custom-input:focus {
+      border-color: #007bff;          /* Border color when focused */
+      outline: none;                  /* Remove default outline */
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: add shadow on focus */
+  }
