@@ -35,12 +35,12 @@ async function handleregistration(event) {
     const email = getvalue("email");
     const password = getvalue("pass");
     const confirm_password = getvalue("againpass");
-    const bio = getvalue("bio");  // New field
-    const dp = document.getElementById("dp").files[0];  // New field
-    const phone = getvalue("phone");  // New field
-    const fb = getvalue("fb");  // New field
-    const ln = getvalue("ln");  // New field
-    const x = getvalue("x");  // New field
+    const bio = getvalue("bio");  
+    const dp = document.getElementById("dp").files[0];  
+    const phone = getvalue("phone");  
+    const fb = getvalue("fb"); 
+    const ln = getvalue("ln");  
+    const x = getvalue("x");  
 
     const info = {
         first_name,
