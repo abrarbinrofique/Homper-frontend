@@ -87,6 +87,7 @@ async function handleregistration(event) {
                 console.log(data);
                 document.getElementById('success').innerText = "Check your email for confirmation link";
                 window.location.href = 'login.html'
+                cconsole.log('check your email address')
             })
             .catch(error => {
                 console.error('Error:', error);
