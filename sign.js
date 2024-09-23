@@ -78,7 +78,7 @@ async function handleregistration(event) {
             formData.append('x', x);
             formData.append('dp', dp); 
 
-            fetch("https://homeper.onrender.com/customer/register/", {
+            fetch("https://homeper-backend.vercel.app/customer/register/", {
                 method: "POST",
                 body: formData,
             })
@@ -118,7 +118,7 @@ const handlelogin=(event)=>{
     console.log(username,password)
 
 
-    fetch("https://homeper.onrender.com/customer/login/",{
+    fetch("https://homeper-backend.vercel.app/customer/login/",{
 
         method: "POST",
         headers: {"content-type": "application/json"},

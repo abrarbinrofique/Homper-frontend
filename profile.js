@@ -5,11 +5,11 @@ const customer =  localStorage.getItem("customer");
  const customerid=JSON.parse(customer).id
  async function profileuser()
  { 
-   const response = await fetch(`https://homeper.onrender.com/customer/userlist/`);
+   const response = await fetch(`https://homeper-backend.vercel.app/customer/userlist/`);
    const userdata = await response.json();
 
 
- const res = await fetch(`https://homeper.onrender.com/customer/${customerid}`);
+ const res = await fetch(`https://homeper-backend.vercel.app/customer/${customerid}`);
  const data = await res.json();
 console.log(data);
    console.log(userdata)
@@ -101,7 +101,7 @@ console.log(data);
 
  profileuser()
  async function usertable(){
-  const response = await fetch(`https://homeper.onrender.com/customer/userlist/`);
+  const response = await fetch(`https://homeper-backend.vercel.app/customer/userlist/`);
   const data = await response.json();
               console.log(data);
       const tr=document.createElement('tr')
@@ -177,7 +177,7 @@ async function profile()
  
 
   console.log(customerid)
-  const response = await fetch(`https://homeper.onrender.com/customer/${customerid}`);
+  const response = await fetch(`https://homeper-backend.vercel.app/customer/${customerid}`);
   const data = await response.json();
   console.log(data);
 
@@ -190,7 +190,7 @@ async function profile()
 
 
 
-    const adresp = await fetch(`https://homeper.onrender.com/customer/userlist/`);
+    const adresp = await fetch(`https://homeper-backend.vercel.app/customer/userlist/`);
     const userdata = await adresp .json();
 
     console.log(userdata)
@@ -284,7 +284,7 @@ profile()
 async function makeUserAdmin(customerId) {
   const token = localStorage.getItem("token"); 
 
-  fetch(`https://homeper.onrender.com/customer/makeadmin/${customerId}/`, {
+  fetch(`https://homeper-backend.vercel.app/customer/makeadmin/${customerId}/`, {
       method: 'POST',
       headers: {
           'Authorization': `Token ${token}`,
@@ -322,7 +322,7 @@ async function addservicebutton(event){
   formData.append('description', Description);
   formData.append('image', Image);
 
-  fetch("https://homeper.onrender.com/service/list/", {
+  fetch("https://homeper-backend.vercel.app/service/list/", {
       method: "POST",
       headers: {
           "Authorization": `Bearer ${Token}`

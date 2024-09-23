@@ -96,13 +96,13 @@ function logoutuser() {
 
 
 async function getservice() {
-    let x = await fetch('https://homeper.onrender.com/service/list/')
+    let x = await fetch('https://homeper-backend.vercel.app/service/list/')
     let data = await x.json()
     return data
 }
 
 async function getre(){
-    let x= await fetch('https://homeper.onrender.com/service/review/')
+    let x= await fetch('https://homeper-backend.vercel.app/service/review/')
     let data=await x.json()
     return data
 }
@@ -160,7 +160,7 @@ async function loadservice() {
 
 async function getre(){
       
-      let x= await fetch('https://homeper.onrender.com/service/review/')
+      let x= await fetch('https://homeper-backend.vercel.app/service/review/')
       let data=await x.json()
 
       const paren = document.getElementById('slider2')
@@ -181,7 +181,7 @@ async function getre(){
 
 
     async function rvname(customerid){
-      const res =await  fetch(`https://homeper.onrender.com/customer/${customerid}`);
+      const res =await  fetch(`https://homeper-backend.vercel.app/customer/${customerid}`);
         const data =await  res.json();
     
        
@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("user", userId);
 
     try {
-      const response = await fetch("https://homeper.onrender.com/customer/", {
+      const response = await fetch("https://homeper-backend.vercel.app/customer/", {
         method: "POST",
         headers: {
           "Authorization": `Token ${token}`
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function makeUserAdmin(customerId) {
   const token = localStorage.getItem("token"); 
 
-  fetch(`https://homeper.onrender.com/customer/makeadmin/${customerId}/`, {
+  fetch(`https://homeper-backend.vercel.app/customer/makeadmin/${customerId}/`, {
       method: 'POST',
       headers: {
           'Authorization': `Token ${token}`,

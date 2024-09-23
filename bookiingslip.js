@@ -25,7 +25,7 @@ async function serviceslip()
 
     const customer =  localStorage.getItem("customer");
     const customerid=JSON.parse(customer).id
-    const x=await fetch(`https://homeper.onrender.com/serviceslot/?customer_id=${customerid}`)
+    const x=await fetch(`https://homeper-backend.vercel.app/serviceslot/?customer_id=${customerid}`)
     const data= await x.json()
     console.log(data)
    const parent=document.getElementById('tableslip')

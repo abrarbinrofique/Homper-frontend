@@ -20,7 +20,7 @@ async function servicetails() {
     const param = new URLSearchParams(window.location.search).get("dataid");
     console.log(param);
 
-    let response = await fetch(`https://homeper.onrender.com/service/list/${param}/`);
+    let response = await fetch(`https://homeper-backend.vercel.app/service/list/${param}/`);
     let data = await response.json();
     console.log(data);
 
@@ -111,7 +111,7 @@ async function submitReview(event) {
     };
     console.log(JSON.stringify(formData))
     try {
-        const response = await fetch('https://homeper.onrender.com/service/review/', {
+        const response = await fetch('https://homeper-backend.vercel.app/service/review/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ async function bookservice(event) {
     };
     console.log(JSON.stringify(formData))
     try {
-        const response = await fetch('https://homeper.onrender.com/serviceslot/', {
+        const response = await fetch('https://homeper-backend.vercel.app/serviceslot/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -190,7 +190,7 @@ async function productreview()
     const param = new URLSearchParams(window.location.search).get("dataid");
     console.log(param);
 
-    let response = await fetch(`https://homeper.onrender.com/service/review/?service_id=${param}`);
+    let response = await fetch(`https://homeper-backend.vercel.app/service/review/?service_id=${param}`);
     let data = await response.json();
     console.log(data);
 
@@ -202,7 +202,7 @@ async function getre(){
 
     const param = new URLSearchParams(window.location.search).get("dataid");
     console.log(param);
-    let response = await fetch(`https://homeper.onrender.com/service/review/?service_id=${param}`);
+    let response = await fetch(`https://homeper-backend.vercel.app/service/review/?service_id=${param}`);
     let data = await response.json();
     console.log(data);
     
@@ -227,7 +227,7 @@ async function getre(){
  
  
      async function rvname(customerid){
-       const res =await  fetch(`https://homeper.onrender.com/customer/${customerid}`);
+       const res =await  fetch(`https://homeper-backend.vercel.app/customer/${customerid}`);
          const data =await  res.json();
      
         
