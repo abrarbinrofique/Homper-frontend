@@ -177,7 +177,7 @@ async function profile()
  
 
   console.log(customerid)
-  const response = await fetch(`https://homeper-backend.vercel.app/customer/${customerid}`);
+  const response = await fetch(`https://homeper-backend.vercel.app/customer/${customerid}/`);
   const data = await response.json();
   console.log(data);
 
