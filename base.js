@@ -181,7 +181,7 @@ async function getre(){
 
 
     async function rvname(customerid){
-      const res =await  fetch(`https://homeper-backend.vercel.app/customer/${customerid}`);
+      const res =await  fetch(`https://homeper-backend.vercel.app/customer/${customerid}/`);
         const data =await  res.json();
     
        
