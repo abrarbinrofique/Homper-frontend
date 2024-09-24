@@ -9,7 +9,7 @@ const customer =  localStorage.getItem("customer");
    const userdata = await response.json();
 
 
- const res = await fetch(`https://homeper-backend.vercel.app/customer/${customerid}`);
+ const res = await fetch(`https://homeper-backend.vercel.app/customer/${customerid}/`);
  const data = await res.json();
 console.log(data);
    console.log(userdata)
