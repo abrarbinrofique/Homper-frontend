@@ -11,14 +11,17 @@ if (!cus || !userication || !token)
 
    landing.innerHTML=
    `
+   <div class="col-lg-7 col-md-12 col-sm-12">
      <img class="logingsiteimage" src="https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723571231/sl9lyh9xlzrexguhcvcm.jpg" alt="">
-      <div class="color-secondary justify-content-center align-items-center m-5">
+   </div>
+   
+   <div class="color-secondary justify-content-center align-items-center m-5">
       <h1 class="">Busy in your daily life?</h1>
          <h3>Homper is here for making your life easy.Lets start the journey with us</h3>
   
          <div class="row d-flex justiy-content-center">
        <a href="sign.html" class="text-center"><button  class="text-white logings">Signup</button></a>
-       <a href="login.html" class="text-center"><button  class="text-white logingl">Already have an account?</button></a>
+       <a href="login.html" class="text-center"><button  class="text-white logingl">Login</button></a>
          </div>
   
       </div>
@@ -117,11 +120,12 @@ async function loadservice() {
 
         
         const div = document.createElement('div')
-        div.classList.add("carder")
+        div.classList.add("col-lg-6", "col-md-12", "col-sm-12", "bg-success");
+
         console.log(data)
         
         div.innerHTML = `
-     <div class="postcard dark blue py-5 mr-5">
+     <div class="postcard dark blue py-5 mr-5 ">
         <a class="postcard__img_link" href="servicedetail.html?dataid=${data.id}">
           <img class="postcard__img" src="https://res.cloudinary.com/dk2vgd0dv/${data.image}" alt="Image Title" />
         </a>

@@ -40,7 +40,7 @@ rvtxt.append(h1)
     div.classList.add('cardcenter')
 
     div.innerHTML = `
-        <div class="postcard dark blue py-5 my-5  carder  col-lg-5">
+        <div class="postcard dark blue py-5 my-5  carder col-lg-10 ">
         <a class="postcard__img_link" href="#">
           <img class="postcard__img" src="https://res.cloudinary.com/dk2vgd0dv/${data.image}" alt="Image Title" />
         </a>
@@ -235,7 +235,7 @@ async function getre(){
      
      li.innerHTML = `
           
-              <div class="card shadow reviewcards mx-5">
+              <div class="card shadow col-lg-12 col-md-12 col-sm-12 ">
                   
                        <img src="https://res.cloudinary.com/dk2vgd0dv/image/upload/v1723575835/jo4v5d6z6fifogomogao.jpg" class="card-img-top" loading="lazy" alt="...">
                      

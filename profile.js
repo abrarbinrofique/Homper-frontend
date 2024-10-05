@@ -29,12 +29,12 @@ console.log(data);
      }
    })
    console.log(k,l)
- 
+  div.classList.add('col-lg-12','col-sm-12','col-md-12','justify-content-center')
    div.innerHTML=
    `
-     <div  id="overlay">
+     <div  id="overlay" class="">
 
-        <div class="overlay">
+        <div class="overlay ">
      <div id="image" class="image">
        
      
@@ -58,8 +58,8 @@ console.log(data);
      <div class=" justify-content-center align-items-center text-center">
    
      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center align-items-center mb-5">
-       <div class="col">
-         <div class="card h-100">
+       <div class="">
+         <div class="card w-100">
   
            <div class="card-body">
              <h5 class="card-title">@${data.user}</h5>
@@ -108,10 +108,10 @@ console.log(data);
       const parent=document.getElementById('tableslip')
       const parent2=document.getElementById('adminadd')
       const h3=document.createElement('h3')
-  
+    
       parent2.innerHTML=
       `
-     <h2 class="justify-content-center bg-danger m-5 p-4"> Add a User as an Admin...</h2>
+     <h2 class="justify-content-center bg-dark text-white m-3 p-4"> Add a User as an Admin...</h2>
   
       `
      parent.append(h3)
@@ -119,9 +119,9 @@ console.log(data);
   
       `
   
-          <td class="bg-primary text-center border border-2 text-dark p-3"><h3 class="bg-primary">customer id</h3></td>
-          <td class="bg-info text-center border border-2 text-dark p-3"><h5 class="bg-info">Customer username</h5></td>
-          <td class="bg-warning text-center border border-2 p-3"><h5 class="bg-warning">Add an Admin</h5></td>
+          <td class="bg-dark text-white text-center border border-2 text-white p-3"><h3 class="bg-dark text-white">customer id</h3></td>
+          <td class="bg-dark text-white text-center border border-2 text-white p-3"><h5 class="bg-dark text-white">Customer username</h5></td>
+          <td class="bg-dark text-white text-center border border-2 p-3"><h5 class="bg-dark text-white" >Add an Admin</h5></td>
          
       
      `
@@ -146,9 +146,9 @@ console.log(data);
      
   
       tr.innerHTML=`
-      <td class="bg-primary text-center border border-2 text-dark"><h3 class="bg-primary">${element.id}</h3></td>
-      <td class="bg-info text-center border border-2 text-dark"><h5 class="bg-info">${element.first_name} ${element.last_name}</h5> </td>
-      <td class="bg-warning text-center border border-2 "><button class="adminbutton ${buttoncolor}  text-white m-4" onclick="makeUserAdmin(${element.id})">${ad}</button></td>
+      <td class=" text-center border border-2 "><h3 class="bg-dark text-white">${element.id}</h3></td>
+      <td class="text-center border border-2 "><h5 class="bg-dark text-white">${element.first_name} ${element.last_name}</h5> </td>
+      <td class=" text-center border border-2 "><button class="adminbutton ${buttoncolor}  text-white m-4" onclick="makeUserAdmin(${element.id})">${ad}</button></td>
       `
       parent.append(tr)
       
@@ -211,7 +211,7 @@ const div=document.getElementById('serviceid')
 
 div.innerHTML=
 `
-<div class="p-3 bg-success m-5"> <h3 class="text-white">Add a new Service...</h3></div>
+<div class="p-3 bg-dark text-white m-5"> <h3 class="text-white">Add a new Service...</h3></div>
 <form class="serviceaddformer" id="registrationForm">
   <p id="error" class="error bg-danger text-white text-center"></p>
   <p id="success" class='bg-success text-white text-center'></p>
@@ -220,7 +220,7 @@ div.innerHTML=
 
 
   
-  <div class="serviceaddform form-outline mb-4">
+  <div class="serviceaddform form-outline mb-2">
       <input id="name" type="text" class="form-control" required placeholder="Service Name">
     
   </div>
@@ -246,7 +246,7 @@ div.innerHTML=
 
 
   <!-- Submit button -->
-  <button class=" serviceaddform btn btn-info" onclick="addservicebutton(event)"> <h5 class="text-white">Add Service</h5></button>
+  <button class=" serviceaddform p-3 btn btn-secondary" onclick="addservicebutton(event)"> <h5 class="text-white">Add Service</h5></button>
 
   <!-- Social login buttons -->
 </form>
