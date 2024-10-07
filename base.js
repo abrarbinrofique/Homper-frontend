@@ -120,7 +120,7 @@ async function loadservice() {
 
         
         const div = document.createElement('div')
-        div.classList.add("col-lg-6", "col-md-12", "col-sm-12", "bg-success");
+        div.classList.add("col-lg-6", "col-md-12", "col-sm-12");
 
         console.log(data)
         
