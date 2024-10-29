@@ -18,9 +18,9 @@
   <div class="container-fluid bg-dark p-3">
     <a class="navbar-brand text-white " href="index.html"> <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i> Homeper</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon color-white"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse color-white" id="navbarSupportedContent">
       <ul class="navbar-nav mt-3">
         <li class="nav-item">
           <a class="nav-link text-white " href="index.html">Services</a>
@@ -139,6 +139,45 @@
         </div>
         
 
+
+
+
+        <div class="modal fade bf" id="exampleMod" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content pg">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Your Service purchase History</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+
+                <div class="tabler">
+                  <table class="table" id="tablular">
+                      <thead>
+                  
+                      <tr class="table-warning">
+                  
+                      
+                          <td class=" text-center">Service Name</td>
+                          <td class="  text-center">Time</td>
+                          <td class=" text-center">Service Status</td>
+                         
+                  
+                      </tr>
+                      </thead>
+                  
+                  
+                  </tbody>
+                  </table>
+                  </div>
+        
+              
+              </div>
+             
+            </div>
+          </div>
+        </div>
   
 
   <div class="tabler">
@@ -147,7 +186,7 @@
     
         <tr class="table-warning">
     
-            <td class="  text-center">No of Service</td>
+        
             <td class=" text-center">Service Name</td>
             <td class="  text-center">Time</td>
             <td class=" text-center">Service Status</td>
@@ -159,8 +198,14 @@
     
     </tbody>
     </table>
+    <div class="d-flex justify-content-end p-5"></div>
+      <button type="button" class="btn kg" data-bs-toggle="modal" data-bs-target="#exampleMod">
+        Order History
+      </button>
     </div>
-
+    </div>
+    
+  
  
 <footer class="footers  d-flex">
 

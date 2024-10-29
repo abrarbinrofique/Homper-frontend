@@ -124,8 +124,12 @@ const handlelogin=(event)=>{
         headers: {"content-type": "application/json"},
         body: JSON.stringify({username,password}),
     })
+
+
     .then((res) => res.json())
     .then((data) => {
+
+
         console.log(data);
         if(data.token && data.user_id){  
         localStorage.setItem("token",data.token);
@@ -133,6 +137,10 @@ const handlelogin=(event)=>{
         localStorage.setItem("customer", JSON.stringify(data.customer))
         window.location.href="index.html"
 
+        }
+        else
+        {
+            alert('please Check your Username and password and try again!')
         }
     });
    

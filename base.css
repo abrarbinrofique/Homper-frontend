@@ -372,7 +372,13 @@ a, a:hover {
 }
 
 
+.navbar-toggler-icon {
+  filter: invert(1); /* This makes the icon white */
+}
 
+.navbar-toggler {
+  border-color: white; /* Optional: sets a white border around the button */
+}
 
 .signer{
   margin-left: 75vw;

@@ -111,7 +111,7 @@ console.log(data);
     
       parent2.innerHTML=
       `
-     <h2 class="justify-content-center bg-dark text-white m-3 p-4"> Add a User as an Admin...</h2>
+     <h3 class="justify-content-center bg-dark text-white m-3 p-4"> Add a User as an Admin...</h3>
   
       `
      parent.append(h3)
@@ -119,9 +119,9 @@ console.log(data);
   
       `
   
-          <td class="bg-dark text-white text-center border border-2 text-white p-3"><h3 class="bg-dark text-white">customer id</h3></td>
-          <td class="bg-dark text-white text-center border border-2 text-white p-3"><h5 class="bg-dark text-white">Customer username</h5></td>
-          <td class="bg-dark text-white text-center border border-2 p-3"><h5 class="bg-dark text-white" >Add an Admin</h5></td>
+          <td class="bg-dark text-white text-center border border-2 text-white p-1"><h3 class="bg-dark text-white">customer id</h3></td>
+          <td class="bg-dark text-white text-center border border-2 text-white p-1"><h5 class="bg-dark text-white">Customer username</h5></td>
+          <td class="bg-dark text-white text-center border border-2 p-1"><h5 class="bg-dark text-white" >Add an Admin</h5></td>
          
       
      `
@@ -146,7 +146,7 @@ console.log(data);
      
   
       tr.innerHTML=`
-      <td class=" text-center border border-2 "><h3 class="bg-dark text-white">${element.id}</h3></td>
+      <td class=" text-center border border-2 "><h4 class="bg-dark text-white">${element.id}</h4></td>
       <td class="text-center border border-2 "><h5 class="bg-dark text-white">${element.first_name} ${element.last_name}</h5> </td>
       <td class=" text-center border border-2 "><button class="adminbutton ${buttoncolor}  text-white m-4" onclick="makeUserAdmin(${element.id})">${ad}</button></td>
       `
@@ -170,6 +170,95 @@ console.log(data);
 
 
  })}
+
+
+async function purchase()
+{
+
+  const parent=document.getElementById('servicedetails')
+  const parents=document.getElementById('tablesli')
+
+   parent.innerHTML=
+   `
+   <h3 class="justify-content-center bg-dark text-white m-3 p-4">Your Service Purchase Summary</h3>
+   `
+
+  
+   const tr=document.createElement('tr')
+   tr.classList.add('w-50')
+   tr.innerHTML=
+  
+      `
+  
+          <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">Total Purchase</p></td>
+          <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">Payment Pending</p></td>
+          <td class="bg-dark text-white text-center border border-2 "><p class="bg-dark text-white" >Cash on Delivery</p></td>
+         <td class="bg-dark text-white text-center border border-2"><p class="bg-dark text-white">Paid</p></td>
+      
+     `
+
+     parents.append(tr)
+
+  const d=await fetch("https://homeper-backend.vercel.app/serviceslot/book/")
+  const data=await d.json()
+  console.log(data)
+
+   
+   let a=0
+   let b=0
+   let c=0
+  data.forEach((element,index) => {
+
+   
+    if (element.service_status==='pending')
+    {
+      a=a+1
+    }
+    if (element.service_status==='paid')
+      {
+        b=b+1
+      }
+      if (element.service_status==='Cash on delivery')
+        {
+          c=c+1
+        }
+
+        if (index === data.length - 1)
+        {
+
+               
+const tr=document.createElement('tr')
+tr.innerHTML=`
+
+ <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">${index+1}</p></td>
+  <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">${a}</p></td>
+  <td class="bg-dark text-white text-center border border-2 "><p class="bg-dark text-white" >${c}</p></td>
+ <td class="bg-dark text-white text-center border border-2"><p class="bg-dark text-white">${b}</p></td>
+
+
+`
+parents.append(tr)
+
+
+        }
+
+}
+
+    
+  );
+
+
+
+ 
+
+
+}
+
+
+
+
+
+
 
 async function profile()
 { 
@@ -257,6 +346,8 @@ div.innerHTML=
 if (element.is_superuser===true)
   {
      usertable()
+
+     purchase()
     
     }
 

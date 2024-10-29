@@ -3,15 +3,15 @@
     margin-right: 10%;
     margin-top: 5%;
 }
-body{
+/* body{
     height: 100vw;
     
-}
+} */
 
 .footers{
    
     background-color: #18151f;
-    margin-top: 82vw;
+    margin-top: 10vw;
 }
 
 
@@ -19,6 +19,21 @@ body{
 .bg{
     background-color: rgb(88, 165, 171);
     color:rgb(12, 7, 1)
+
+
+}
+
+
+.kg{
+    background-color: rgb(88, 165, 171);
+    color:rgb(12, 7, 1)
+
+
+}
+
+.kg:hover {
+    background-color: rgb(15, 18, 19); /* Change this color as desired */
+    color: rgb(255, 255, 255); /* Change this color as desired */
 }
 
 
@@ -39,3 +54,12 @@ border: 1px solid rgba(23, 23, 23, 0.91);
 .cg{
     background-color: rgb(171, 146, 88);
 }
+
+
+.navbar-toggler-icon {
+    filter: invert(1); /* This makes the icon white */
+  }
+  
+  .navbar-toggler {
+    border-color: white; /* Optional: sets a white border around the button */
+  }

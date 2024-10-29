@@ -61,27 +61,14 @@ body {
     }
 
 
-/*       .bg-glass {
-        background-color: hsla(0, 0%, 100%, 0.9) !important;
-        backdrop-filter: saturate(200%) blur(25px);
-      }
-  
-      .background {
-        width: 100%; 
-        height: 100vh; 
-        background-size: cover;
-        background-position: center;
+
+    .navbar-toggler-icon {
+      filter: invert(1); /* This makes the icon white */
     }
-    .coveri{
-        height: 66vh;
-        width: 150%;
+    
+    .navbar-toggler {
+      border-color: white; /* Optional: sets a white border around the button */
     }
-
-    .logoback{
-        background-color: rgba(255, 255, 255, 0.5);
-    } */
-
-
     .custom-input {
       border: 2px solid #ccc;       
       border-radius: 10px;            

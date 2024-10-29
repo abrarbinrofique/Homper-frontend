@@ -49,15 +49,84 @@ async function serviceslip()
    data.forEach(element => {
     const tr=document.createElement('tr')
    
-     i=i+1   
+    
+
+    console.log(element)
+    if(element.service_status==='pending')
+    {
+        tr.innerHTML=`
+
+        <tr>
+        
+      
+        <td class="p-2 m-2 bg text-center border border-2 text-white">${element.service}</td>
+        <td class="p-2 m-2 bg text-center border border-2 text-white">${element.chooce}</td>
+         <td class="p-2 m-2 bg text-center border border-2"> 
+         
+         <button data-bs-toggle="dropdown" aria-expanded="false" class="btn  ${
+            element.service_status==='paid'?'btn-success bg-success text-white' :
+            element.service_status==='pending'?' btn-danger bg-danger':
+            element.service_status==='Cash on delivery'?' btn-warning bg-warning':''}">
+           
+           
+        
+        ${element.service_status}
+          ${element.service_status==='paid'?'<i class="fa fa-cart-arrow-down" style="font-size:20px;color:black;background: none;"></i>':
+            element.service_status==='pending'?'<i style="font-size:24px" class="far">&#xf150;</i>':
+            element.service_status==='Cash on delivery'?'<i style="font-size:24px" class="fas">&#xf63b;</i>': ''}  
+         
+           ${element.service_status==='pending'?`
+     <ul class="dropdown-menu bg">
+        <li  class="p-3 dropdown-item bg" onclick="event.preventDefault(); payying(${element.id})">Pay Now</li>
+        <li class="dropdown-item bg" onclick="event.preventDefault(); delivery(${element.id})">Cash on Delivery</a></li>
+      </ul>
+            
+            `: ''}
+    
+         </button>
+    
+    
+         
+         </td>
+    
+        </tr>
+        `
+        parent.appendChild(tr)
+    }
+
+   
+
+
+        
+    });
+}
+
+
+
+
+
+async function orderhistory()
+{
+
+    const customer =  localStorage.getItem("customer");
+    const customerid=JSON.parse(customer).id
+    const x=await fetch(`https://homeper-backend.vercel.app/serviceslot/book/?customer_id=${customerid}`)
+    const data= await x.json()
+    console.log(data)
+   const parent=document.getElementById('tablular')
+
+   data.forEach(element => {
+    const tr=document.createElement('tr')
+   
+ 
 
     console.log(element)
 
-    tr.innerHTML=`
+    if(element.service_status!=='pending')
+    {
+        tr.innerHTML=`
 
     <tr>
-    
-    <td class="p-2 m-2 bg text-center border border-2 text-white">${i}</td>
     <td class="p-2 m-2 bg text-center border border-2 text-white">${element.service}</td>
     <td class="p-2 m-2 bg text-center border border-2 text-white">${element.chooce}</td>
      <td class="p-2 m-2 bg text-center border border-2"> 
@@ -94,8 +163,15 @@ async function serviceslip()
 
 
         
-    });
+   
+    }
+});
+
+  
 }
+
+
+
 
 function logoutuser() {
     localStorage.removeItem('token');
@@ -110,6 +186,9 @@ function logoutuser() {
 
 
 serviceslip()
+
+orderhistory()
+
 
 
 
