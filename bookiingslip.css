@@ -16,3 +16,26 @@ body{
 
 
 
+.bg{
+    background-color: rgb(88, 165, 171);
+    color:rgb(12, 7, 1)
+}
+
+
+.bf{
+    /* From https://css.glass */
+background: rgba(23, 23, 23, 0.57);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(11.5px);
+-webkit-backdrop-filter: blur(11.5px);
+border: 1px solid rgba(23, 23, 23, 0.91);
+}
+
+.pg{
+    background-color: rgb(88, 171, 109);
+}
+
+.cg{
+    background-color: rgb(171, 146, 88);
+}

@@ -44,17 +44,113 @@
 
 
 <body>
+
+
+
+<!-- Modal HTML -->
+<div class="modal fade bf" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content pg">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Customer Order Information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form id="paymentForm">
+          <div class="mb-3">
+            <label for="customerName" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="customerName" required>
+          </div>
+          <div class="mb-3">
+            <label for="customerEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="customerEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="phones" class="form-label">Phone</label>
+            <input type="number" class="form-control" id="phones" required>
+          </div>
+          
+         
+          <div class="mb-3">
+            <label for="addr" class="form-label">Address</label>
+            <input type="address" class="form-control" id="addr" required>
+          </div>
+           
+          
+          <div class="mb-3">
+            <label for="amm" class="form-label">Paying Amount</label>
+            <input type="number" class="form-control" id="amm" required>
+          </div>
+          <input id="servevalue" type="hidden">
+          <button onclick="submitpayment(event)" type="submit" class="btn btn-dark">Proceed to payment</button>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
+        <!-- Form to collect customer information -->
+
+
+
+
+        <div class="modal fade bf" id="exampleModa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content cg">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cash on Delivery Information</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+        
+                <form id="paymentForm">
+                  <div class="mb-3">
+                    <label for="customerNam" class="form-label">Customer Name</label>
+                    <input type="text" class="form-control" id="customerNam" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="customerEmai" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="customerEmai" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="number" class="form-control" id="phone" required>
+                  </div>
+                  
+                 
+                  <div class="mb-3">
+                    <label for="add" class="form-label">Address</label>
+                    <input type="address" class="form-control" id="add" required>
+                  </div>
+                   
+                  
+                  <div class="mb-3">
+                    <label for="am" class="form-label">Paying Amount</label>
+                    <input type="number" class="form-control" id="am" required>
+                  </div>
+                  <input id="serveva" type="hidden">
+                  <button type="submit" class="btn btn-dark">Proceed to order</button>
+                </form>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+        
+
   
 
   <div class="tabler">
     <table class="table" id="tableslip">
         <thead>
     
-        <tr>
+        <tr class="table-warning">
     
-            <td class="table-secondary  text-center">No of Service</td>
-            <td class="table-success text-center">Service Name</td>
-            <td class="table-danger text-center">Time</td>
+            <td class="  text-center">No of Service</td>
+            <td class=" text-center">Service Name</td>
+            <td class="  text-center">Time</td>
+            <td class=" text-center">Service Status</td>
            
     
         </tr>

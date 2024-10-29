@@ -16,6 +16,7 @@ if (cus && userication && token)
           }
 
 let serviceId; 
+
 async function servicetails() {
     const param = new URLSearchParams(window.location.search).get("dataid");
     console.log(param);
@@ -25,10 +26,13 @@ async function servicetails() {
     console.log(data);
 
     serviceId = data.Name; // Store the service ID
+    
+   
     const rvtxt=document.getElementById('rvtxt')
 const h1=document.createElement('h1')
 
 console.log(serviceId)
+
 h1.innerHTML=
 `
 <h3 class="mx-5 p-3  rvtxtds">Our customer reviews about ${serviceId} </h3>
@@ -78,7 +82,7 @@ rvtxt.append(h1)
 }
 
 servicetails(); 
-
+console.log(servicepay)
 async function submitReview(event) {
     event.preventDefault();
     
@@ -136,14 +140,16 @@ async function submitReview(event) {
 
 
 async function bookservice(event) {
+   
     event.preventDefault();
-    
-  
+    console.log(serviceId)
+   
 
 
     const timeElement = document.getElementById('time');
     const customer =  localStorage.getItem("customer");
     const customerid=JSON.parse(customer).id
+
 
     console.log(customerid,timeElement)
     if (!timeElement || !customerid) {
@@ -151,19 +157,28 @@ async function bookservice(event) {
         return;
     }
 
+
+
     const time =timeElement.value;
     console.log(time,serviceId)
+    const param = new URLSearchParams(window.location.search).get("dataid");
+    const u = await fetch(`https://homeper-backend.vercel.app/service/list/${param}/`)
+    const mo=await u.json()
+    let servicepay=mo.price
+    console.log(servicepay,serviceId)
+    console.log(typeof(servicepay))
 
     const formData = {
       
     service: serviceId,
     chooce: time,
-    customer: customerid
+    customer: customerid,
+    main_payment:parseInt(servicepay),
         
     };
     console.log(JSON.stringify(formData))
     try {
-        const response = await fetch('https://homeper-backend.vercel.app/serviceslot/', {
+        const response = await fetch('https://homeper-backend.vercel.app/serviceslot/book/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
