@@ -144,7 +144,7 @@ async function submitpayment(event)
 
     console.log(JSON.stringify(f))
     try{
-        const res=await fetch(`http://127.0.0.1:8000/serviceslot/purchase/${serviceid}/post/`,{
+        const res=await fetch(`https://homeper-backend.vercel.app/serviceslot/purchase/${serviceid}/post/`,{
 
             method:'POST',
             headers:{
@@ -226,7 +226,7 @@ async function cashdelivery(event)
 
     console.log(JSON.stringify(f))
     try{
-        const res=await fetch(`http://127.0.0.1:8000/serviceslot/purchase/${serviceid}/post/`,{
+        const res=await fetch(`https://homeper-backend.vercel.app/serviceslot/purchase/${serviceid}/post/`,{
 
             method:'POST',
             headers:{
@@ -241,7 +241,7 @@ async function cashdelivery(event)
             alert("Our service is at your doorstep, ready to make your home shine!");
 
           
-            window.location.href=`http://127.0.0.1:8000/serviceslot/purchase/${serviceid}/cod/`
+            window.location.href=`https://homeper-backend.vercel.app/serviceslot/purchase/${serviceid}/cod/`
           
                 
          
