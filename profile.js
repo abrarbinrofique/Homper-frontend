@@ -119,9 +119,9 @@ console.log(data);
   
       `
   
-          <td class="bg-dark text-white text-center border border-2 text-white p-1"><h3 class="bg-dark text-white">customer id</h3></td>
-          <td class="bg-dark text-white text-center border border-2 text-white p-1"><h5 class="bg-dark text-white">Customer username</h5></td>
-          <td class="bg-dark text-white text-center border border-2 p-1"><h5 class="bg-dark text-white" >Add an Admin</h5></td>
+         
+          <td class="hehe text-center border border-2 text-white p-1"><h5 class="hehe">Customer List</h5></td>
+          <td class="hehe text-center border border-2 p-1"><h5 class="hehe" >Add an Admin</h5></td>
          
       
      `
@@ -146,9 +146,9 @@ console.log(data);
      
   
       tr.innerHTML=`
-      <td class=" text-center border border-2 "><h4 class="bg-dark text-white">${element.id}</h4></td>
-      <td class="text-center border border-2 "><h5 class="bg-dark text-white">${element.first_name} ${element.last_name}</h5> </td>
-      <td class=" text-center border border-2 "><button class="adminbutton ${buttoncolor}  text-white m-4" onclick="makeUserAdmin(${element.id})">${ad}</button></td>
+    
+      <td class="text-center border-2 hehe "><h3 class="hehe">${element.first_name} ${element.last_name}</h3> </td>
+      <td class=" text-center border-2 hehe "><button class=" adminbutton ${buttoncolor}  text-white m-4" onclick="makeUserAdmin(${element.id})">${ad}</button></td>
       `
       parent.append(tr)
       
@@ -190,10 +190,10 @@ async function purchase()
   
       `
   
-          <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">Total Purchase</p></td>
-          <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">Payment Pending</p></td>
-          <td class="bg-dark text-white text-center border border-2 "><p class="bg-dark text-white" >Cash on Delivery</p></td>
-         <td class="bg-dark text-white text-center border border-2"><p class="bg-dark text-white">Paid</p></td>
+          <td class="hehe text-center border-2"><p class="hehe">Total Purchase <i style='font-size:24px' class='fab'>&#xf209;</i></p></td>
+          <td class="hehe text-center border-2"><p class="hehe">Payment Pending <i style='font-size:24px' class='fas'>&#xf4ba;</i></p></td>
+          <td class="hehe text-center border-2 "><p class="hehe" >Cash on Delivery <i style='font-size:24px' class='fas'>&#xf4c4;</i></p></td>
+         <td class="hehe text-center border-2 "><p class="hehe">Paid <i style='font-size:24px' class='fas'>&#xf4be;</i></p></td>
       
      `
 
@@ -230,10 +230,10 @@ async function purchase()
 const tr=document.createElement('tr')
 tr.innerHTML=`
 
- <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">${index+1}</p></td>
-  <td class="bg-dark text-white text-center border border-2 text-white "><p class="bg-dark text-white">${a}</p></td>
-  <td class="bg-dark text-white text-center border border-2 "><p class="bg-dark text-white" >${c}</p></td>
- <td class="bg-dark text-white text-center border border-2"><p class="bg-dark text-white">${b}</p></td>
+ <td class="hehe text-center border border-2 text-white "><p class="hehe">${index+1}</p></td>
+  <td class="hehe text-center border border-2 text-white "><p class="hehe">${a}</p></td>
+  <td class="hehe text-center border border-2 "><p class="hehe" >${c}</p></td>
+ <td class="hehe text-center border border-2"><p class="hehe">${b}</p></td>
 
 
 `
