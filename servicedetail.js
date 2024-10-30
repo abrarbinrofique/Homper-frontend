@@ -82,7 +82,7 @@ rvtxt.append(h1)
 }
 
 servicetails(); 
-console.log(servicepay)
+
 async function submitReview(event) {
     event.preventDefault();
     
@@ -95,6 +95,10 @@ async function submitReview(event) {
     const customerid=JSON.parse(customer).id
 
     console.log(customerid)
+    const param = new URLSearchParams(window.location.search).get("dataid");
+    const u = await fetch(`https://homeper-backend.vercel.app/service/list/${param}/`)
+    const mo=await u.json()
+    console.log(mo)
 
     console.log(customerid,ratingElement, reviewTextElement )
     if (!ratingElement || !reviewTextElement || !customerid) {
